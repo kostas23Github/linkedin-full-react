@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/linkedin-full-react/static/css/main.4048d6c8.css",
+    "main.js": "/linkedin-full-react/static/js/main.e1fca81e.js",
+    "static/js/787.f8b1f6c9.chunk.js": "/linkedin-full-react/static/js/787.f8b1f6c9.chunk.js",
+    "index.html": "/linkedin-full-react/index.html",
+    "main.4048d6c8.css.map": "/linkedin-full-react/static/css/main.4048d6c8.css.map",
+    "main.e1fca81e.js.map": "/linkedin-full-react/static/js/main.e1fca81e.js.map",
+    "787.f8b1f6c9.chunk.js.map": "/linkedin-full-react/static/js/787.f8b1f6c9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4048d6c8.css",
+    "static/js/main.e1fca81e.js"
+  ]
+}
