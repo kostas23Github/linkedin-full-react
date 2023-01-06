@@ -1,0 +1,34 @@
+// This file holds all my maps, and merges them. 
+
+// I name new theme-colors with this name
+// This is a map so it needs parenthesis
+
+$custom-theme-colors: (
+    "cLight": $cLight,
+    "cLightish": $cLightish,
+    "cDarkish": $cDarkish,
+    "cDark": $cDark,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+
+/** HOW TO ADD NEW COLORS TO CURRENT THEME ONES **/
+// https://getbootstrap.com/docs/5.3/customize/color/#generating-utilities
+// How this merge works -breakdown-
+// What it does is append to the theme-colors map of bootstrap my custom-theme-colors map, so it has also the 4 custom colors declared above.
+// First, goes into the $utilities map, then in the "color" prop, then in gets the values of the "color" prop, and to those values appends the custom map. In order to get to each inner level a map-merge is used to merge each inner level.
+
+$utilities: map-merge(
+    $utilities, (
+        "color": map-merge(
+            map-get($utilities, "color"),
+            (
+                values: map-merge(
+                    map-get(map-get($utilities, "color"), "values"), (
+                        $custom-theme-colors
+                    )
+                )
+            )
+        ),
+    ),
+);

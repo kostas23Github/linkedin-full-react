@@ -1,0 +1,23 @@
+/** For more info about all this sass code head over to CUSTOMIZE-BOOTSTRAP folder **/
+// https://getbootstrap.com/docs/5.2/customize/sass/
+
+
+@import "../../node_modules/bootstrap/scss/functions";
+
+@import './variables';
+
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+@import './map-amends';
+
+@import "../../node_modules/bootstrap/scss/utilities/api";
+
+// import bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+// This bootstrap must come last bc where the variables are declared a <!default> is used, meaning that if a value to the variable isn't declared already then that default value is assigned. In this case i overwrite the primary variable, so the default isn't used when the bootstrap css is imported. If the order was the other way, then it would use the default bc no value was assigned to that variable.
+
+// The root bootstrap element
+@import './root';
