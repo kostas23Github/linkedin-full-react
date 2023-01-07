@@ -16,7 +16,8 @@ const AddAppointment = ({ onSendAppointment, lastId }) => {
   // State for storing the addApointment form data.
   const [formData, setFormData] = useState(clearData)
 
-  const formDataPublish = () => {
+  const formDataPublish = (event) => {
+    event.preventDefault()
     const appointmentInfo = {
       id: lastId + 1,
       ownerName: formData.ownerName,
@@ -42,7 +43,7 @@ const AddAppointment = ({ onSendAppointment, lastId }) => {
       </Button>
       {
         <Collapse in={toggleForm}>
-          <Form className="container">
+          <Form className="container" onSubmit={formDataPublish}>
             <FormGroup className="mx-2 mt-4">
               <FloatingLabel htmlFor="ownerName" label="Owner Name"
                 className="fw-bold">
@@ -92,7 +93,7 @@ const AddAppointment = ({ onSendAppointment, lastId }) => {
               </FloatingLabel>
             </FormGroup>
             <FormGroup className="d-flex justify-content-end mx-2">
-              <Button type="submit" variant="outline-cDark" onClick={formDataPublish} className="px-4">
+              <Button type="submit" variant="outline-cDark"  className="px-4">
                 Submit
               </Button>
             </FormGroup>
